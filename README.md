@@ -64,3 +64,7 @@ Without the bundle, you get a generic answer. With it, a grounded agent will spo
 - **Running it as a session** — [`docs/FACILITATION.md`](docs/FACILITATION.md) and [`docs/SCENARIOS.md`](docs/SCENARIOS.md).
 
 *Northwind Money is synthetic; all numbers are illustrative.*
+
+## License
+
+[MIT](LICENSE) — fork it, adapt it, ship it.
