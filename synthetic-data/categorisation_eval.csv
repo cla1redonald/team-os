@@ -1,0 +1,12 @@
+category,sampled,correct,accuracy
+groceries,820,798,0.973
+salary_income,540,527,0.976
+utilities,610,512,0.839
+rent_mortgage,470,451,0.960
+transfers,560,442,0.789
+eating_out,690,662,0.959
+transport,520,498,0.958
+subscriptions,410,388,0.946
+insurance,300,282,0.940
+savings_investments,380,357,0.939
+overall,5000,4590,0.918
