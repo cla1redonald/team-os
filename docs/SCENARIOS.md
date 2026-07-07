@@ -2,7 +2,7 @@
 type: Runbook
 title: Scenario pack — audience participation & hands-on play
 description: Graded, ready-to-run scenarios against the Northwind bundle, plus formats to get the room forking, running, and extending it live.
-tags: [scenarios, participation, practical-day, workshop]
+tags: [scenarios, participation, presenting, workshop]
 timestamp: 2026-07-03
 ---
 
@@ -11,7 +11,9 @@ timestamp: 2026-07-03
 Turns the demo into a workshop. Every scenario runs against `bundle/` + `synthetic-data/`, so anyone who forks the repo and points their agent at the folder gets the same result. Graded easy → hard, then "break it", "extend it", and "turn it on your own team".
 
 **Setup for participants (say this once):**
-> Fork `github.com/cla1redonald/team-os`, open a terminal in it, start your agent (Claude Code / Gemini / whatever), and tell it: *"Read the `bundle/` folder and `synthetic-data/`."* Now you're all pointed at the same Team OS.
+> Fork `github.com/cla1redonald/team-os`, open a terminal in it, start your agent (Claude Code / Gemini / whatever), and tell it: *"Read the `bundle/` folder and `synthetic-data/` — ignore `docs/`."* Now you're all pointed at the same Team OS.
+
+(The `docs/` exclusion matters: this file and DEMO.md contain the expected answers, and an exploring agent will happily read them and spoil its own test. For *your* on-stage demo, go further — run the agent in a clean folder containing only `bundle/` and `synthetic-data/`; see DEMO.md setup.)
 
 ---
 
@@ -31,7 +33,11 @@ Turns the demo into a workshop. Every scenario runs against `bundle/` + `synthet
 **S3.** *"Connection success rate dropped this week — what's going on and what should we do?"*
 - **Grounds on:** `metrics/connection-success-rate.md` → `synthetic-data/connection_attempts.csv` → `runbooks/bank-connection-outage.md`.
 - **Good answer:** **Cortex Building Society** fell 0.95 → 0.72 from 29 June while all other ASPSPs held → single-ASPSP signature → **upstream, not us** → degraded-mode message, **don't mass-retry**, document the quirk.
-- **Run it twice:** first with an agent that *hasn't* read the bundle (generic shrug), then grounded. That gap is the whole talk.
+- **Run it twice:** first with an agent that *hasn't* read the bundle (same harness, empty folder — keep the A/B fair), then grounded. The ungrounded answer will be a *competent generic framework that ends by asking you for data* — name that; the gap in kind, not competence, is the whole talk.
+
+**S3b — the canary.** *"What's the escalation codename for a bank-connection outage?"*
+- **Grounds on:** `runbooks/bank-connection-outage.md` — and *nothing else on Earth*. The answer (**Taybridge**) exists only in the bundle.
+- **Teaching point:** the grounding proof that ends the "didn't the model already know open banking?" objection. A base model can produce plausible triage from domain knowledge; it cannot produce your team's codename. Use one of these in any bundle you build — it doubles as a regression test.
 
 ---
 

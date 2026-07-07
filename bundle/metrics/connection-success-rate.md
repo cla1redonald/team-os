@@ -15,7 +15,7 @@ timestamp: 2026-07-03
 
 **Owner.** [Connections team](/ownership/connections-team.md).
 
-**Current (illustrative).** 94.2% blended. Worst slice: *Cortex Building Society* at 71% after their API migration — see [bank connection outage](/runbooks/bank-connection-outage.md). Data: [aggregation store](/data-sources/aggregation-store.md), table `connection_attempts` (sample in [synthetic-data](../../synthetic-data/connection_attempts.csv)).
+**Current.** 94.2% blended. Worst slice: *Cortex Building Society* at 71% after their API migration — see [bank connection outage](/runbooks/bank-connection-outage.md). Data: [aggregation store](/data-sources/aggregation-store.md), table `connection_attempts` (sample in [synthetic-data](../../synthetic-data/connection_attempts.csv)).
 
 **Why it matters.** CSR is the closest thing Northwind has to a north-star for the [AISP](/glossary/aisp.md) business: every failed connection is a customer who can't see their money and a client who sees our product as broken. A CSR dip is almost always an upstream ASPSP change, not our code — that distinction is the first thing an on-call engineer must establish.
 

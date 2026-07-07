@@ -15,7 +15,7 @@ timestamp: 2026-07-03
 
 **Owner.** [Data Intelligence team](/ownership/data-intelligence-team.md); model at [categorisation model](/data-sources/categorisation-model.md).
 
-**Current (illustrative).** 91.8% overall. Weakest categories: *utilities* (84%) and *transfers* (79%, often confused with income). Sample: [synthetic-data](../../synthetic-data/categorisation_eval.csv).
+**Current.** 91.8% overall. Weakest categories: *utilities* (84%) and *transfers* (79%, often confused with income). Sample: [synthetic-data](../../synthetic-data/categorisation_eval.csv).
 
 **Why it matters.** It's the input to every [enrichment](/glossary/enrichment.md) feature and the most common client data-quality complaint. Accuracy figures are **company-reported against our own labelled sample**, not independently audited — state that plainly to clients.
 

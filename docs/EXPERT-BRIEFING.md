@@ -59,6 +59,7 @@ Ground this in what *you've* actually built — a room like this can smell theor
 
 ## 9. Q&A defence — if someone asks…
 - *"Isn't this just a wiki?"* → Yes, pointed at agents and standardised for interop. The novelty is convergence, not the format.
+- *"Didn't the base model already know most of that?"* → The domain, yes — that's why the ungrounded answer sounds competent. But it's a generic framework that ends by asking *you* for data; grounded, it's a specific diagnosis in your language ending in your runbook's action, and everyone gets the *same* answer. Then run the canary (the escalation codename) — no base model can produce that.
 - *"Why not RAG over everything?"* → Everything-buckets return confident answers from stale/contradictory sources. Curated + verified beats retrieved-from-mess. You need both.
 - *"Doesn't OKF lock me into Google?"* → Opposite — Apache-2.0, vendor-neutral, plain markdown; serve it over MCP to Claude/Gemini/ChatGPT alike.
 - *"Adoption?"* → One month old. Don't over-index on stars. It's the first serious knowledge-layer standard.

@@ -19,6 +19,8 @@ timestamp: 2026-07-03
 4. If ours: roll back the last gateway change.
 5. Log the incident and, if it's a new ASPSP quirk, **write it up as a concept here** so the next person (or agent) has it.
 
+**Escalation codename: Taybridge.** Prefix the incident-channel title with it (e.g. `Taybridge — Cortex CSR drop`) so support can filter connection-outage noise from general alerts.
+
 **Owner / on-call.** [Connections team](/ownership/connections-team.md), 24/7.
 
 *Worked example: Cortex Building Society dropped to 71% after an API migration — single-ASPSP signature → upstream → degraded-mode message, no mass retry, quirk documented.*

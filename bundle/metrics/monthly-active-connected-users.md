@@ -15,6 +15,6 @@ timestamp: 2026-07-03
 
 **Owner.** [Data Intelligence team](/ownership/data-intelligence-team.md) reports it; every team affects it.
 
-**Current (illustrative).** 1.42M, +3% MoM. The Mercer-style white-label deployments drive most growth; churn is dominated by lapsed [reauth](/metrics/reauth-completion-rate.md), not opt-out.
+**Current.** 1.42M, +3% MoM. The Mercer-style white-label deployments drive most growth; churn is dominated by lapsed [reauth](/metrics/reauth-completion-rate.md), not opt-out.
 
 **Why it matters.** MACU is the business's compounding asset and what most client contracts bill against. It's downstream of *both* [connection success](/metrics/connection-success-rate.md) and [reauth completion](/metrics/reauth-completion-rate.md) — which is why those two operational metrics get board attention.

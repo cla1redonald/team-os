@@ -15,6 +15,6 @@ timestamp: 2026-07-03
 
 **Owner.** Payments team.
 
-**Current (illustrative).** 87.5%. Main drop-off is [SCA](/glossary/sca.md) abandonment at the bank's app hand-off, worst on a few [ASPSPs](/glossary/aspsp.md) with clunky redirects.
+**Current.** 87.5%. Main drop-off is [SCA](/glossary/sca.md) abandonment at the bank's app hand-off, worst on a few [ASPSPs](/glossary/aspsp.md) with clunky redirects.
 
 **Why it matters.** Payments is the newer, higher-margin line; conversion is the headline number clients benchmark against card rails. The bottleneck is usually the ASPSP's SCA UX, which we don't control — so improvements come from smart ASPSP selection and retry logic, not our checkout.
