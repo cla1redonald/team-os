@@ -57,6 +57,8 @@ Without the bundle, you get a generic answer. With it, a grounded agent will spo
 3. Point your agents at the folder (directly, or serve it over MCP).
 4. Keep it current — a weekly sweep beats a perfect one-off.
 
+**Google/M365 shop with no git culture?** Markdown is the wire format, not the user interface. The same pattern works as a shared Drive/SharePoint folder — one Doc per concept, Doc owners as the ownership map, version history as the change log, Suggesting mode as the review step, agents reading via connectors — and Docs exports markdown natively, so the content stays portable. Git buys you cleaner diffs, not admission to the club.
+
 ## Going deeper
 
 - **The argument in full** — [`docs/EXPERT-BRIEFING.md`](docs/EXPERT-BRIEFING.md): the four-layer mental model (instructions / knowledge / memory / tools), where OKF fits, build-vs-buy, and the Q&A defence.
