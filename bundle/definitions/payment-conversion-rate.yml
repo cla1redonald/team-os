@@ -1,0 +1,38 @@
+# Governed metric definition — MetricFlow-style (dbt Semantic Layer syntax).
+# Concept: /metrics/payment-conversion-rate.md  ·  Owner: payments-team
+
+semantic_model:
+  name: payment_journeys
+  description: One row per initiated PIS payment journey, by ASPSP.
+  model: ref('payment_journeys')
+  defaults:
+    agg_time_dimension: initiated_at
+  dimensions:
+    - name: aspsp
+      type: categorical   # SCA abandonment concentrates at specific ASPSPs — see known-aspsp-quirks
+    - name: initiated_at
+      type: time
+      type_params:
+        time_granularity: day
+  measures:
+    - name: initiated
+      agg: count
+    - name: completed
+      agg: sum
+      expr: "case when status = 'completed' then 1 else 0 end"
+    - name: sca_abandoned
+      agg: sum
+      expr: "case when abandoned_stage = 'sca_handoff' then 1 else 0 end"
+
+metric:
+  name: payment_conversion_rate
+  label: Payment conversion rate
+  description: Share of initiated payment journeys that complete. Main loss is SCA abandonment at the bank hand-off; slice by ASPSP before blaming the flow.
+  type: ratio
+  type_params:
+    numerator: completed
+    denominator: initiated
+  meta:
+    owner: payments-team
+    concept: /metrics/payment-conversion-rate.md
+    alerting: "per-ASPSP conversion >8pts below blended → check known-aspsp-quirks before escalating"

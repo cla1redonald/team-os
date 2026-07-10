@@ -52,6 +52,11 @@ Turns the demo into a workshop. Every scenario runs against `bundle/` + `synthet
 - **Good answer:** not a connection failure — it's **lapsed reauth**; the data shows a **channel-mix shift** (email-only jumped in W27; email converts ~44% vs in-app ~81%), so the "spike" is mix, not regression → move prompts in-app → owned by Product (Consent) + Connections.
 - **Teaching point:** this is the payoff — the agent chains glossary → metric → data → runbook → owner. No single doc holds the answer; the *graph* does.
 
+**S4b — the discrimination test.** *"Anything else in connections worth worrying about?"*
+- **Grounds on:** `connection_attempts.csv` (the 21 June Northern Rockford dip) → `runbooks/known-aspsp-quirks.md`.
+- **Good answer:** there *was* a dip — planned third-Sunday maintenance, self-recovered same day, **expected, don't page**. Only Cortex needs action.
+- **Teaching point:** anyone's anomaly detector finds two dips. A grounded agent tells you which one *matters* — the quirks note turns a false alarm into a non-event. That file is captured tacit knowledge: it used to live in one lead's head (see `ownership/connections-team.md`).
+
 **S5.** *"We're pitching a new bank client. What proof points and metrics should I lead with?"*
 - **Grounds on:** `processes/enterprise-client-onboarding.md`, `metrics/monthly-active-connected-users.md`, enrichment glossary.
 - **Teaching point:** the same OS serves a *commercial* question, not just an incident — shows it's cross-functional, not just for engineers.

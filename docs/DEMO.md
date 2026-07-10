@@ -70,6 +70,8 @@ Live, in a plain text editor (no terminal): open [`glossary/categorisation.md`](
 ## Backup questions (if you want more)
 - "Why is our categorisation accuracy lower than we'd like, and where?" → agent reads the metric + `categorisation_eval.csv` → utilities (84%) and transfers (79%, confused with income).
 - "Reauth completion dropped — is that real?" → agent reads `reauth_events.csv` → it's a **channel-mix shift** (email-only jumped in W27), not a true regression → [reauth runbook](../bundle/runbooks/reauth-dropoff-spike.md).
+- **"Anything *else* in connections worth worrying about?"** (the discrimination test) → agent finds Northern Rockford's 21 June dip (0.68), matches it to the **planned third-Sunday maintenance window** in [known quirks](../bundle/runbooks/known-aspsp-quirks.md), self-recovered → **"expected, don't page."** Detection is easy; a grounded agent *discriminates*.
+- **"A client says payments keep failing — what's really happening?"** (multi-hop, commercial) → `payment_journeys.csv` shows SCA abandonment concentrated at **Haldane** (~79% vs ~90%) → quirks note: flaky mobile redirect, raised with their team, in-app fallback → connections to Haldane are *fine*; it's the SCA hand-off, one bank, known and owned.
 
 ## The one-liner to land it
 > "Your team's AI already runs on *something*. Right now, for most teams, that something is nothing — it's guessing. A Team OS is the smallest change that turns guessing into knowing. It's a folder of markdown. You can start Monday."

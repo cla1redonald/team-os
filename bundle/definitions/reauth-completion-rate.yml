@@ -1,0 +1,35 @@
+# Governed metric definition — MetricFlow-style (dbt Semantic Layer syntax).
+# Concept: /metrics/reauth-completion-rate.md  ·  Owner: product-consent + connections-team
+
+semantic_model:
+  name: reauth_events
+  description: One row per reauthentication request falling due, by prompt channel.
+  model: ref('reauth_events')
+  defaults:
+    agg_time_dimension: due_week
+  dimensions:
+    - name: channel
+      type: categorical   # in_app | email_only — mix shifts move the blended rate; slice before alarming
+    - name: due_week
+      type: time
+      type_params:
+        time_granularity: week
+  measures:
+    - name: due
+      agg: count
+    - name: completed
+      agg: sum
+      expr: "case when completed_at is not null then 1 else 0 end"
+
+metric:
+  name: reauth_completion_rate
+  label: Reauth completion rate
+  description: Share of due reauthentications completed. ALWAYS slice by channel before diagnosing — blended moves are usually mix, not behaviour.
+  type: ratio
+  type_params:
+    numerator: completed
+    denominator: due
+  meta:
+    owner: product-consent
+    concept: /metrics/reauth-completion-rate.md
+    alerting: "blended drop >5pts week-on-week → run the reauth drop-off runbook; check channel mix FIRST"
