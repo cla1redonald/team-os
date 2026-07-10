@@ -62,6 +62,11 @@ Live, in a plain text editor (no terminal): open [`glossary/categorisation.md`](
 
 **Then volunteer the integrity note before anyone asks:** *"And yes — in production this edit is a pull request. The kernel lives in git, so review, CODEOWNERS and the change journal are the integrity model. What you just watched is the authoring cost, not the deployment path."* (Pre-empts the "one careless edit poisons every agent" objection — a fair one, since this beat demonstrates exactly that power.)
 
+**Then the Google/M365 aside — say it unprompted; half the room is thinking it (~20 sec):**
+> *"And if you're thinking 'my people live in Google Docs, not text editors' — same pattern, your stack: a shared Drive or SharePoint folder is the kernel, Suggesting mode is the pull request, version history is the journal, folder permissions are already mapped to your IdP, and Docs exports markdown natively so the content stays yours. Git buys you cleaner diffs, not admission to the club. Markdown is the wire format, not the user interface."*
+
+(Pre-empted objections buy more credibility than answered ones — this one lands at exactly the moment the live-edit beat provokes it.)
+
 ## Backup questions (if you want more)
 - "Why is our categorisation accuracy lower than we'd like, and where?" → agent reads the metric + `categorisation_eval.csv` → utilities (84%) and transfers (79%, confused with income).
 - "Reauth completion dropped — is that real?" → agent reads `reauth_events.csv` → it's a **channel-mix shift** (email-only jumped in W27), not a true regression → [reauth runbook](../bundle/runbooks/reauth-dropoff-spike.md).
