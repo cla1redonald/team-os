@@ -44,7 +44,7 @@ Only the bundle contains **Taybridge** — no amount of base-model domain knowle
 ## Beat 3 — Attach a driver: numbers resolve, they don't retrieve · 2 min
 Open [`definitions/connection-success-rate.yml`](../bundle/definitions/connection-success-rate.yml) next to the concept file, and point at the Formula line in the concept: the metric resolves **by name** through a governed definition.
 
-**Say it:** *"This is the seam where the numbers layer attaches. In production this exact file lives in your dbt project, and dbt hosts it behind an MCP server on every plan — the agent asks for `connection_success_rate` by name and receives compiled SQL. The number is **resolved, not retrieved**. I'm not standing up a warehouse on stage — I'm showing you where it plugs in, because this layer you buy, you don't build."*
+**Say it:** *"This is the seam where the numbers layer attaches. The pieces exist today — MetricFlow is Apache 2.0, and dbt hosts an MCP server on every plan — so an agent can ask for `connection_success_rate` **by name** and get compiled SQL rather than guessing. Composing that end-to-end is the frontier, not a shipped product — which is exactly the whitespace. I'm not standing up a warehouse on stage; I'm showing you where it plugs in, because this layer you buy, you don't build."*
 
 This beat pre-empts the sharpest objection to the kernel: *"your metric file is just prose and a CSV."* Yes — and here is the governed definition it defers to.
 
@@ -59,6 +59,8 @@ Feed the *same* `bundle/` to a **different** agent (Gemini / ChatGPT / a second 
 
 ## Beat 6 — Non-engineer edits the OS · 3 min
 Live, in a plain text editor (no terminal): open [`glossary/categorisation.md`](../bundle/glossary/categorisation.md) and add a line, or create a new concept `bundle/glossary/rent-recognition.md` with two lines of frontmatter and a sentence. Re-ask the agent something that needs it. It picks up the new knowledge instantly. **Say it:** *no engineer, no deployment, no vector database — a subject-matter expert just taught every agent on the team.*
+
+**Then volunteer the integrity note before anyone asks:** *"And yes — in production this edit is a pull request. The kernel lives in git, so review, CODEOWNERS and the change journal are the integrity model. What you just watched is the authoring cost, not the deployment path."* (Pre-empts the "one careless edit poisons every agent" objection — a fair one, since this beat demonstrates exactly that power.)
 
 ## Backup questions (if you want more)
 - "Why is our categorisation accuracy lower than we'd like, and where?" → agent reads the metric + `categorisation_eval.csv` → utilities (84%) and transfers (79%, confused with income).
