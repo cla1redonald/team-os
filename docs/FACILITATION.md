@@ -13,12 +13,12 @@ timestamp: 2026-07-03
 ## Run of show (45 min)
 | Time | Segment | Mode | Notes |
 |---|---|---|---|
-| 0–3 | The brilliant amnesiac (problem) | Talk | Open cold, no throat-clearing. One story. |
-| 3–7 | Four layers (model) | Whiteboard/slide | Draw it live; land the *knowledge-layer gap*. |
-| 7–13 | Landscape | Talk | OKF (3 wks), Beads (Dolt flex), builders-vs-vendors finding. |
-| 13–28 | **Live build + the wow** | Demo | The [DEMO.md](DEMO.md) arc. This is the session. |
-| 28–34 | Build vs buy | Talk/discussion | Invite the debate — this room *will* engage. |
-| 34–42 | Why it matters + your positioning | Talk | Flywheel; diagnostics + Team OS; your own proof points. |
+| 0–3 | The brilliant amnesiac (problem) | Talk | Open cold, no throat-clearing. "AI is still the DOS era — everyone hand-loads the printer drivers." |
+| 3–8 | Four layers + boot sequence (model) | Whiteboard/slide | Anatomy (four layers), then order of adoption (kernel → syscalls → permissions → indexer → journal → userland). |
+| 8–13 | Landscape | Talk | OKF, Beads (Dolt flex), builders-vs-vendors finding. |
+| 13–31 | **Live build + the wow** | Demo | The [DEMO.md](DEMO.md) arc incl. canary, driver seam, scoped views. This is the session. |
+| 31–37 | Build vs buy | Talk/discussion | Invite the debate — you're armed: packaging pattern, metering lock-in, the MCP trichotomy. |
+| 37–42 | Why it matters + your positioning | Talk | Flywheel; diagnostics + Team OS; your own proof points. |
 | 42–45 | Close + the Monday challenge | Talk | The one-liner; hand out the repo link. |
 
 ## Materials
@@ -35,7 +35,7 @@ timestamp: 2026-07-03
 ## Fallbacks
 - No wifi → run the agent fully local (bundle is offline markdown) or use screenshots.
 - Agent gives a weak grounded answer → you have the CSV open; narrate the diagnosis yourself. The *bundle* is the star, not the model.
-- Time overrun → the cuttable segment is build-vs-buy (28–34); never cut the live demo.
+- Time overrun → cut in this order: scoped-views beat (Beat 4, say the line over a screenshot), then build-vs-buy talk (31–37, it resurfaces in Q&A anyway); never cut the before/after/canary core.
 
 ## What "success" looks like
 At least three people ask for the repo link, and one says "I'm doing this with my team." If a CTO argues build-vs-buy with you for five minutes, you've won — they're now thinking in your frame.

@@ -22,6 +22,8 @@ Every team's AI is a **brilliant amnesiac**. It's fluent, but it doesn't know *y
 
 One line: *Instructions = the staff handbook. Knowledge = the company wiki. Memory = their notebook. Tools = their access badge.* The instructions layer is near-commoditised (converging on AGENTS.md); tools has a winner (MCP); memory is a battleground; **the knowledge layer was the gap — that's what OKF and a Team OS fill.**
 
+**The four layers are the anatomy; the boot sequence is the order of adoption.** Most companies' AI is still the DOS era — every person hand-loads the printer drivers into every conversation. The fix is the same move computing made forty years ago, in the same order: (0) bare metal → (1) **the kernel** boots — canonical concepts, definitions, ownership; small, authored, owned — (2) **system calls** — numbers resolve through governed definitions, agents never touch raw SQL — (3) **users and permissions** — scoped views over one kernel — (4) **the indexer** — retrieval engines like enterprise search find everything but own nothing — (5) **the journal** — who changed what definition, when — (6) **userland** — agents finally get to act, sandboxed, because everything below exists. Each stage makes the next one safe; pain reorders the middle, never the ends. *An agent without a kernel is a confident amnesiac with hands.*
+
 ## 3. OKF — the knowledge layer, standardised (3 weeks old)
 Google's **Open Knowledge Format** (v0.1, 12 June 2026, `GoogleCloudPlatform/knowledge-catalog`, Apache-2.0): a directory of markdown files, **one "concept" per file**, only `type` required in frontmatter, concepts cross-linked into a **graph**; optional `index.md`/`log.md`. It's just markdown — forkable, git-hostable, **editable by a non-engineer**. It formalises the "LLM-wiki" pattern into something portable and vendor-neutral.
 - **The sceptic's line to pre-empt:** *"a standard, or just a folder?"* Answer: technically a folder with rules — the value isn't expressiveness, it's **convergence/interop**. One month in, don't claim victory; claim it's the first serious attempt to standardise the knowledge layer.
@@ -45,6 +47,15 @@ A hand-curated OKF Team OS does by hand, for a small team, what **Glean / M365 C
 - **The trigger to buy is capability, not cost:** buy when you need *enforced permissions* and *live-system reach*, which arrives before the dollars hurt.
 - **Memory ≠ knowledge:** curated knowledge (OKF) is authored/governed; memory (Mem0/Letta/Zep/Beads) is derived/mutable. You need both.
 
+**The verified 2026 packaging pattern (pricing pages, July 2026 — date everything, these change quarterly):** MCP/agent access is commoditising down-market (Augment bundles it in a $100/mo base plan; dbt hosts MCP on all plans), while the paywall is consistently **identity, compliance, and deployment control** — SSO/SCIM, CMEK, ISO 42001/27001, self-hosting are Enterprise-gated everywhere. And the new lock-in is **metering mechanics, not data formats**: dbt exhausting AI credits blocks *all* tools through its hosted MCP server; Augment's headline price includes only $100 of usage then bills at LLM list price +40%; Sourcegraph is enterprise-only from $16K with MCP gated behind it; Palantir's ontology export is negotiable only before signature. **Scrutinise the meter in the contract, not just the export button.**
+
+**"Should we build our own MCP server?" — the trichotomy.** "MCP" conflates three things, and the build-vs-buy answer differs per thing:
+1. **The protocol** — a standard. You adopt standards; nobody builds their own POSIX.
+2. **The infrastructure** — gateways, registries, auth, audit. Undifferentiated plumbing in a fragmented ~30-vendor market with production-proven open source. Adopt or buy; never build.
+3. **MCP servers over your own systems** — an MCP server is an *interface to something*. When the something is yours — your product, your data, your kernel — you build the interface, because nobody else can. In OS terms: the hardware vendor writes the driver for its own device; it just doesn't write its own USB stack. The proof is universal: dbt, Sourcegraph, Augment, Cube, and Glean all *built* MCP servers over their own products while telling customers to *adopt* the protocol.
+
+Plus the refinement that elevates it: **tool design is curation.** One vendor benchmark found a ~100x token difference between two MCP toolkits for the *same* SaaS on identical queries — payload shaping, not connector count, is the differentiator. Which tools you expose and what shape their answers take encodes what questions your org asks — so your MCP tool surface is part of the *kernel*, not the wiring. The line: **"Build MCP servers over what you own. Never build the gateway. Treat tool definitions as curated context."**
+
 ## 7. Your positioning (why you, specifically)
 Ground this in what *you've* actually built — a room like this can smell theory. List your own proof points before you present: the agents, skills, MCP servers, or knowledge systems you run day to day, and any team or org where you've applied the pattern for real. If you can pair diagnostics (*where you are*) with a Team OS (*how to improve*), that's a strong one-two.
 
@@ -52,9 +63,9 @@ Ground this in what *you've* actually built — a room like this can smell theor
 1. **Problem** (3m) — the brilliant amnesiac; adoption stalls outside eng.
 2. **Model** (4m) — the four layers; the knowledge-layer gap.
 3. **Landscape** (6m) — OKF (3 weeks old), Beads (Dolt), the non-eng builders + the "vendors vs builders" finding.
-4. **Live build** (12m) — stand up the Northwind Money OKF bundle; show it's markdown a non-engineer can write.
-5. **The wow** (12m) — point an agent at it: **before** (no context → generic) vs **after** (grounded → diagnoses the Cortex CSR dip using metric + runbook + data); then the *same* bundle read by a second agent = portability.
-6. **Build-vs-buy + why it matters** (6m) — the debate, the flywheel, your positioning.
+4. **Live build** (10m) — stand up the Northwind Money OKF bundle; show it's markdown a non-engineer can write. Frame it: *deliberately stage 1 — the kernel, the only layer you build.*
+5. **The wow** (14m) — **before** (no context → competent generic framework that asks *you* for data) vs **after** (grounded → diagnoses the Cortex CSR dip using metric + runbook + data); the **canary** (Taybridge); the **driver seam** (metric resolves by name through the governed definition); **scoped views** (exec vs support — same kernel, different permissions); then the same bundle read by a second agent = portability.
+6. **Build-vs-buy + why it matters** (6m) — the debate, now armed: the 2026 packaging pattern (MCP commoditising down, identity/compliance is the paywall, metering is the lock-in), the MCP trichotomy, the flywheel, your positioning.
 7. **Close** (2m) — "your team's AI already runs on *something*. Right now it's nothing. Here's the smallest thing that changes that."
 
 ## 9. Q&A defence — if someone asks…
@@ -65,6 +76,8 @@ Ground this in what *you've* actually built — a room like this can smell theor
 - *"Adoption?"* → One month old. Don't over-index on stars. It's the first serious knowledge-layer standard.
 - *"Permissions?"* → The honest DIY gap — no per-user ACL. Above ~100 seats or regulated data, that's your trigger to buy.
 - *"Beads?"* → Task memory, git-native, now Dolt-backed; adopt the *pattern*, pin the version; unproven outside eng.
+- *"We built our own MCP server — are you saying we shouldn't have?"* → Opposite. You built the driver for your own device — that's the pattern working; every vendor does exactly the same over their own product. What you shouldn't build is the *gateway* (fragmented market, production-proven OSS) or a second-hand server to someone else's SaaS. See §6's trichotomy.
+- *"Your metric file is just prose and a CSV."* → Correct — which is why it defers to a governed definition (`definitions/*.yml`); in production that resolves through the semantic layer over MCP. The number is compiled, not retrieved. That's Beat 3 of the demo.
 
 ## 10. Accuracy flags to respect on stage
 - OKF is 3 weeks old — frame as promising, not proven.

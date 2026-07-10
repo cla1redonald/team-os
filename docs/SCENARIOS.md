@@ -39,6 +39,11 @@ Turns the demo into a workshop. Every scenario runs against `bundle/` + `synthet
 - **Grounds on:** `runbooks/bank-connection-outage.md` — and *nothing else on Earth*. The answer (**Taybridge**) exists only in the bundle.
 - **Teaching point:** the grounding proof that ends the "didn't the model already know open banking?" objection. A base model can produce plausible triage from domain knowledge; it cannot produce your team's codename. Use one of these in any bundle you build — it doubles as a regression test.
 
+**S3c — scoped views.** Run `scripts/build-demo-views.sh`, point one agent at `demo-views/exec` and another at `demo-views/support`, and ask both: *"What's our MACU number, and what should support do when reauth completions drop?"*
+- **Grounds on:** the same kernel, filtered two ways — exec has metrics/processes but no runbooks; support has runbooks and triage metrics but no commercial metrics.
+- **Good answer:** each agent answers its half and *declines* the other ("not in my OS") rather than guessing.
+- **Teaching point:** permissions over knowledge, demonstrated with folders. In production an MCP gateway serves these as virtual endpoints mapped to IdP groups — the gateway is adopt-not-build plumbing; *scoped governed knowledge* is the part nobody sells.
+
 ---
 
 ## Tier 3 — Multi-hop (the "wow", 3–4 concepts) · "it reasons across the OS"

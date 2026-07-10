@@ -1,0 +1,43 @@
+# Governed metric definition — MetricFlow-style (dbt Semantic Layer syntax).
+# Concept: /metrics/connection-success-rate.md  ·  Owner: connections-team
+#
+# THE POINT: agents ask for this metric BY NAME and receive compiled, governed SQL —
+# the number is resolved, not retrieved. In production this file lives in your dbt
+# project; dbt hosts it behind an MCP server on all platform plans. Here it is a
+# faithful mock so the demo shows the seam without standing up a warehouse on stage.
+
+semantic_model:
+  name: connection_attempts
+  description: One row per attempted ASPSP connection.
+  model: ref('connection_attempts')
+  defaults:
+    agg_time_dimension: attempted_at
+  dimensions:
+    - name: aspsp
+      type: categorical
+    - name: attempted_at
+      type: time
+      type_params:
+        time_granularity: day
+  measures:
+    - name: attempts
+      agg: count
+      expr: "1"
+    - name: successes
+      agg: sum
+      expr: "case when status = 'success' and latency_s <= 60 then 1 else 0 end"
+
+metric:
+  name: connection_success_rate
+  label: Connection success rate (CSR)
+  description: >
+    Share of attempted ASPSP connections that complete and return data within 60s.
+    Rolling 7 days, sliced by ASPSP.
+  type: ratio
+  type_params:
+    numerator: successes
+    denominator: attempts
+  meta:
+    owner: connections-team
+    concept: /metrics/connection-success-rate.md
+    alerting: ">10pt below the 7-day per-ASPSP baseline triggers the bank-connection-outage runbook"

@@ -8,10 +8,13 @@ timestamp: 2026-07-03
 
 # Live demo script — the worked example
 
-The arc: **ungrounded → grounded → portable → non-engineer-editable.** ~12–15 min. Rehearse it end-to-end at least twice; have screenshots as a fallback if wifi dies.
+The arc: **ungrounded → the kernel boots → a driver attaches (numbers) → scoped views (permissions) → portable → non-engineer-editable.** ~16–19 min. Rehearse it end-to-end at least twice; have screenshots as a fallback if wifi dies.
+
+**The framing that holds it together:** this demo deliberately *builds* only stage 1 of the boot sequence — the kernel — because it's the only layer an org should ever build. Everything after is shown as a *seam*: where a buyable driver attaches. Say that out loud early; it converts "it's just markdown" from a weakness into the thesis.
 
 ## Setup (before you're on stage)
 - **Copy `bundle/` and `synthetic-data/` into a clean demo folder — do NOT run the demo agent in the full repo.** Agents explore: pointed at the whole repo, it can read `docs/` (including this script and the scenario answers) and narrate your own demo back at you, or flag the whole thing as a staged exercise. Field-tested: this exact contamination happened in an external test run.
+- Run `scripts/build-demo-views.sh` and copy `demo-views/exec` and `demo-views/support` alongside the clean folder (for Beat 4).
 - Terminal open in the clean folder, agent (Claude Code) ready.
 - The scripted question on a slide so the room can follow.
 
@@ -38,10 +41,23 @@ Now it should:
 
 Only the bundle contains **Taybridge** — no amount of base-model domain knowledge can produce it. If anyone suspects the model "already knew" open banking, this settles it.
 
-## Beat 3 — Portability · 3 min
+## Beat 3 — Attach a driver: numbers resolve, they don't retrieve · 2 min
+Open [`definitions/connection-success-rate.yml`](../bundle/definitions/connection-success-rate.yml) next to the concept file, and point at the Formula line in the concept: the metric resolves **by name** through a governed definition.
+
+**Say it:** *"This is the seam where the numbers layer attaches. In production this exact file lives in your dbt project, and dbt hosts it behind an MCP server on every plan — the agent asks for `connection_success_rate` by name and receives compiled SQL. The number is **resolved, not retrieved**. I'm not standing up a warehouse on stage — I'm showing you where it plugs in, because this layer you buy, you don't build."*
+
+This beat pre-empts the sharpest objection to the kernel: *"your metric file is just prose and a CSV."* Yes — and here is the governed definition it defers to.
+
+## Beat 4 — Scoped views: same kernel, different permissions · 3 min
+Two folders, built by `scripts/build-demo-views.sh`: `demo-views/exec` (metrics, processes, ownership — no runbooks) and `demo-views/support` (runbooks, triage metrics — no commercial metrics). Ask **both** agents the same question:
+> "What's our monthly active connected users number, and what should support do when reauth completions spike downward?"
+
+The exec agent gives MACU but has no runbook; the support agent walks the runbook but says MACU isn't in its OS. **Say it:** *"Same kernel, two views. In production an MCP gateway serves these as virtual endpoints mapped to your IdP groups — off the shelf, open source, running in production at enterprise scale. The gateway is plumbing you adopt; the thing being scoped — governed knowledge — is what nobody else does."*
+
+## Beat 5 — Portability · 3 min
 Feed the *same* `bundle/` to a **different** agent (Gemini / ChatGPT / a second tool). Ask the same question. It reaches the same grounded conclusion. **Say it:** *the knowledge isn't locked in one vendor — it's plain markdown any agent can read. That's OKF's whole point.*
 
-## Beat 4 — Non-engineer edits the OS · 3 min
+## Beat 6 — Non-engineer edits the OS · 3 min
 Live, in a plain text editor (no terminal): open [`glossary/categorisation.md`](../bundle/glossary/categorisation.md) and add a line, or create a new concept `bundle/glossary/rent-recognition.md` with two lines of frontmatter and a sentence. Re-ask the agent something that needs it. It picks up the new knowledge instantly. **Say it:** *no engineer, no deployment, no vector database — a subject-matter expert just taught every agent on the team.*
 
 ## Backup questions (if you want more)
