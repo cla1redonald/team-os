@@ -67,6 +67,17 @@ Live, in a plain text editor (no terminal): open [`glossary/categorisation.md`](
 
 (Pre-empted objections buy more credibility than answered ones — this one lands at exactly the moment the live-edit beat provokes it.)
 
+## Beat 7 — The patrol: the register keeps itself honest · 1 min
+Run the patrol against the bundle (one command, ~1 second) and show the digest:
+
+```
+kernel-keeper .        # private CLI for now — 8 deterministic checks
+```
+
+It prints an **affirm-or-amend digest grouped by owner**: dangling links, staleness, ownerless concepts, journal silence, definition↔concept pointer breaks. **Say it:** *"This is the librarian's patrol — the automatable 80% of keeping a kernel true. Its first runs found three real gaps in this exact bundle the week I built it; the fixes are public commits in this repo's history. It reports and proposes, it never edits — the clerk is automated, the judge is still a human. That's the answer to 'every wiki dies': this one is patrolled, and rot surfaces in days, not in a wrong answer months later."*
+
+This beat closes the arc: grounded → governed → scoped → portable → editable → **patrolled**. It pre-empts the maintenance-decay objection before it's asked.
+
 ## Backup questions (if you want more)
 - "Why is our categorisation accuracy lower than we'd like, and where?" → agent reads the metric + `categorisation_eval.csv` → utilities (84%) and transfers (79%, confused with income).
 - "Reauth completion dropped — is that real?" → agent reads `reauth_events.csv` → it's a **channel-mix shift** (email-only jumped in W27), not a true regression → [reauth runbook](../bundle/runbooks/reauth-dropoff-spike.md).
