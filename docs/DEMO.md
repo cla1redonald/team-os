@@ -58,7 +58,9 @@ The exec agent gives MACU but has no runbook; the support agent walks the runboo
 Feed the *same* `bundle/` to a **different** agent (Gemini / ChatGPT / a second tool). Ask the same question. It reaches the same grounded conclusion. **Say it:** *the knowledge isn't locked in one vendor — it's plain markdown any agent can read. That's OKF's whole point.*
 
 ## Beat 6 — Non-engineer edits the OS · 3 min
-Live, in a plain text editor (no terminal): open [`glossary/categorisation.md`](../bundle/glossary/categorisation.md) and add a line, or create a new concept `bundle/glossary/rent-recognition.md` with two lines of frontmatter and a sentence. Re-ask the agent something that needs it. It picks up the new knowledge instantly. **Say it:** *no engineer, no deployment, no vector database — a subject-matter expert just taught every agent on the team.*
+**First, plant the baseline (5 sec):** run `kernel-keeper . --quiet` → one line, "11 findings (0 high) — mostly healthy." Say nothing else; you're setting up Beat 7's delta.
+
+Live, in a plain text editor (no terminal): open [`glossary/categorisation.md`](../bundle/glossary/categorisation.md) and add a line, or create a new concept `bundle/glossary/rent-recognition.md` with two lines of frontmatter and a sentence — **and deliberately include a link to `/glossary/affordability.md`, a concept you haven't written yet** (*"I'll reference affordability — I owe the register that one"*). Re-ask the agent something that needs it. It picks up the new knowledge instantly. **Say it:** *no engineer, no deployment, no vector database — a subject-matter expert just taught every agent on the team.*
 
 **Then volunteer the integrity note before anyone asks:** *"And yes — in production this edit is a pull request. The kernel lives in git, so review, CODEOWNERS and the change journal are the integrity model. What you just watched is the authoring cost, not the deployment path."* (Pre-empts the "one careless edit poisons every agent" objection — a fair one, since this beat demonstrates exactly that power.)
 
@@ -67,16 +69,16 @@ Live, in a plain text editor (no terminal): open [`glossary/categorisation.md`](
 
 (Pre-empted objections buy more credibility than answered ones — this one lands at exactly the moment the live-edit beat provokes it.)
 
-## Beat 7 — The patrol: the register keeps itself honest · 1 min
-Run the patrol against the bundle (one command, ~1 second) and show the digest:
+## Beat 7 — The patrol: break-then-catch · 1 min
+The live edit in Beat 6 just created real librarian-work: the new concept is on no map, has no owner, and promises a concept that doesn't exist. Now run the patrol full (one command, ~1 second):
 
 ```
 kernel-keeper .        # private CLI for now — 8 deterministic checks
 ```
 
-It prints an **affirm-or-amend digest grouped by owner**: dangling links, staleness, ownerless concepts, journal silence, definition↔concept pointer breaks. **Say it:** *"This is the librarian's patrol — the automatable 80% of keeping a kernel true. Its first runs found three real gaps in this exact bundle the week I built it; the fixes are public commits in this repo's history. It reports and proposes, it never edits — the clerk is automated, the judge is still a human. That's the answer to 'every wiki dies': this one is patrolled, and rot surfaces in days, not in a wrong answer months later."*
+The digest's new items are exactly what the room watched come into existence: **HIGH — link to `/glossary/affordability.md` resolves to nothing**, plus `rent-recognition.md` unindexed and unowned. Point at them. **Say it:** *"Ten seconds ago a non-engineer taught every agent on the team. The patrol just caught everything that edit owed the register — the map, the owner, and a promise to a concept that doesn't exist yet. Affirm or amend, grouped by owner. It reports and proposes, it never edits — the clerk is automated, the judge is still a human. And its first runs found three real gaps in this exact bundle the week I built it; the fixes are public commits. That's the answer to 'every wiki dies': this one is patrolled — rot surfaces in seconds, not in a wrong answer months later."*
 
-This beat closes the arc: grounded → governed → scoped → portable → editable → **patrolled**. It pre-empts the maintenance-decay objection before it's asked.
+This beat closes the arc: grounded → governed → scoped → portable → editable → **patrolled** — and it demonstrates the *loop* (edit → rot → detection → owner), not just a tool. It pre-empts the maintenance-decay objection before it's asked.
 
 ## Backup questions (if you want more)
 - "Why is our categorisation accuracy lower than we'd like, and where?" → agent reads the metric + `categorisation_eval.csv` → utilities (84%) and transfers (79%, confused with income).
