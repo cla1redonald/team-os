@@ -11,7 +11,7 @@ timestamp: 2026-07-03
 
 **Definition.** Of customers prompted to [reauthenticate](/glossary/consent-and-reauth.md) their consent, the share who complete [SCA](/glossary/sca.md) before the connection lapses.
 
-**Formula.** `completed_reauths / due_reauths` over the reauth window, by client and channel.
+**Formula.** Resolved through the governed definition at [`/definitions/reauth-completion-rate.yml`](../definitions/reauth-completion-rate.yml) — `completed_reauths / due_reauths` over the reauth window, by client and channel. Always slice by channel before diagnosing a blended move.
 
 **Owner.** Product (consent UX) with [Connections team](/ownership/connections-team.md); source [consent store](/data-sources/consent-store.md).
 
