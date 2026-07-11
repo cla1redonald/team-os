@@ -9,6 +9,8 @@ timestamp: 2026-07-03
 
 # Aggregation store
 
+**Owner.** [Connections team](/ownership/connections-team.md).
+
 The system of record for [connections](/metrics/connection-success-rate.md): connected accounts, connection attempts, and the raw transaction data pulled from [ASPSPs](/glossary/aspsp.md). Owned by the [Connections team](/ownership/connections-team.md).
 
 **Key tables.** `connections`, `connection_attempts` (drives [CSR](/metrics/connection-success-rate.md)), `transactions_raw` (feeds [categorisation](/glossary/categorisation.md)). Sample extract: [synthetic-data/connection_attempts.csv](../../synthetic-data/connection_attempts.csv).

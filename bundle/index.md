@@ -26,6 +26,7 @@ timestamp: 2026-07-03
 ## Runbooks — when things break
 - [Bank connection outage](/runbooks/bank-connection-outage.md)
 - [Reauth drop-off spike](/runbooks/reauth-dropoff-spike.md)
+- [Known ASPSP quirks](/runbooks/known-aspsp-quirks.md)
 
 ## Ownership — who owns what
 - [Team map](/ownership/team-map.md)
