@@ -14,3 +14,5 @@ timestamp: 2026-07-03
 4. **Steady state.** Client billed against [MACU](/metrics/monthly-active-connected-users.md); QBRs review [CSR](/metrics/connection-success-rate.md) and [categorisation accuracy](/metrics/categorisation-accuracy.md).
 
 **Owner.** Client Success (see [team map](/ownership/team-map.md)).
+
+**Canonical source.** The full onboarding pack (checklists, contract templates, integration guide) lives in the Client Success shared drive — *that* is the system of record; this concept records **that it's canonical, who owns it, and how it connects** to the metrics and glossary above. The kernel points; it doesn't copy. If this pointer and the pack ever disagree, the pack wins and this file gets fixed.
