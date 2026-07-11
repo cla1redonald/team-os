@@ -12,4 +12,4 @@ The extension of **open banking** (regulated sharing of current-account data via
 
 **Why it matters at Northwind.** Open-finance breadth is our differentiator — we aggregate the *whole* balance sheet, not just current accounts, which is what powers richer [categorisation](/glossary/categorisation.md) and [enrichment](/glossary/enrichment.md). It also widens our regulatory surface (Consumer Duty, pensions dashboards).
 
-Related: [AISP](/glossary/aisp.md) · [Enrichment](/glossary/enrichment.md) · [Data Intelligence team](/ownership/data-intelligence-team.md)
+Related: [AISP](/glossary/aisp.md) · [Enrichment](/glossary/enrichment.md) · [Data Intelligence team](/ownership/data-intelligence-team.md) · Supersedes: [screen scraping](/glossary/screen-scraping.md)

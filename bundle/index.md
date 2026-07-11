@@ -12,6 +12,8 @@ timestamp: 2026-07-03
 >
 > **Northwind Money** is a synthetic open-finance platform (aggregation, categorisation, payments, verification) modelled on the real UK sector. Numbers are illustrative.
 
+**The export contract:** [Manifest](/manifest.md) — what this kernel contains and the guarantee that all of it leaves with you.
+
 ## Metrics — what we measure
 - [Connection success rate](/metrics/connection-success-rate.md)
 - [Categorisation accuracy](/metrics/categorisation-accuracy.md)
@@ -39,4 +41,4 @@ timestamp: 2026-07-03
 - [Consent store](/data-sources/consent-store.md)
 
 ## Glossary — the language we speak
-- [AISP](/glossary/aisp.md) · [PISP](/glossary/pisp.md) · [ASPSP](/glossary/aspsp.md) · [SCA](/glossary/sca.md) · [Consent & reauth](/glossary/consent-and-reauth.md) · [Categorisation](/glossary/categorisation.md) · [Enrichment](/glossary/enrichment.md) · [Open finance](/glossary/open-finance.md)
+- [AISP](/glossary/aisp.md) · [PISP](/glossary/pisp.md) · [ASPSP](/glossary/aspsp.md) · [SCA](/glossary/sca.md) · [Consent & reauth](/glossary/consent-and-reauth.md) · [Categorisation](/glossary/categorisation.md) · [Enrichment](/glossary/enrichment.md) · [Open finance](/glossary/open-finance.md) · [Screen scraping](/glossary/screen-scraping.md) *(superseded — kept as history)*
