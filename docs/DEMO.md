@@ -19,13 +19,13 @@ The arc: **ungrounded → the kernel boots → a driver attaches (numbers) → s
 - The scripted question on a slide so the room can follow.
 
 ## Beat 1 — Before (the amnesiac) · 2 min
-Ask an agent with **no access** to the bundle — same harness, pointed at an **empty folder**, so the only variable is the bundle (comparing chat-without vs agent-with is an unfair A/B and a sharp room will call it):
+Ask **a blank agent** — no access to the bundle — same harness, pointed at an **empty folder**, so the only variable is the bundle (comparing chat-without vs agent-with is an unfair A/B and a sharp room will call it):
 > "At Northwind Money, connection success rate dropped this week. What's going on and what should we do?"
 
 Expect a *competent* generic answer — a decent triage framework that ends by asking **you** for the data. Don't undersell it; name it precisely: *fluent, sensible methodology, zero knowledge of us — it hands the work back to you. Ten people asking get ten different frameworks.*
 
 ## Beat 2 — After (grounded) · 4 min
-Point the agent at the bundle:
+Now **the grounded agent** — same model, pointed at the bundle:
 > "Read the `bundle/` folder and `synthetic-data/`. Then: connection success rate dropped this week — what's going on and what should we do?"
 
 Now it should:
@@ -55,7 +55,7 @@ Two folders, built by `scripts/build-demo-views.sh`: `demo-views/exec` (metrics,
 The exec agent gives MACU but has no runbook; the support agent walks the runbook but says MACU isn't in its OS. **Say it:** *"Same kernel, two views. In production an MCP gateway serves these as virtual endpoints mapped to your IdP groups — off the shelf, open source, running in production at enterprise scale. The gateway is plumbing you adopt; the thing being scoped — governed knowledge — is what nobody else does."*
 
 ## Beat 5 — Portability · 3 min
-Feed the *same* `bundle/` to a **different** agent (Gemini / ChatGPT / a second tool). Ask the same question. It reaches the same grounded conclusion. **Say it:** *the knowledge isn't locked in one vendor — it's plain markdown any agent can read. That's OKF's whole point.*
+Feed the *same* `bundle/` to **a rival brand of agent** (Gemini / ChatGPT / a second tool). Ask the same question. It reaches the same grounded conclusion. **Say it:** *the knowledge isn't locked in one vendor — it's plain markdown any agent can read. That's OKF's whole point.*
 
 ## Beat 6 — Non-engineer edits the OS · 3 min
 **First, plant the baseline (5 sec):** run `kernel-keeper . --quiet` → one line, "11 findings (0 high) — mostly healthy." Say nothing else; you're setting up Beat 7's delta.
@@ -65,7 +65,7 @@ Live, in a plain text editor (no terminal): open [`glossary/categorisation.md`](
 **Then volunteer the integrity note before anyone asks:** *"And yes — in production this edit is a pull request. The kernel lives in git, so review, CODEOWNERS and the change journal are the integrity model. What you just watched is the authoring cost, not the deployment path."* (Pre-empts the "one careless edit poisons every agent" objection — a fair one, since this beat demonstrates exactly that power.)
 
 **Then the Google/M365 aside — say it unprompted; half the room is thinking it (~20 sec):**
-> *"And if you're thinking 'my people live in Google Docs, not text editors' — same pattern, your stack: a shared Drive or SharePoint folder is the kernel, Suggesting mode is the pull request, version history is the journal, folder permissions are already mapped to your IdP, and Docs exports markdown natively so the content stays yours. Git buys you cleaner diffs, not admission to the club. Markdown is the wire format, not the user interface."*
+> *"And if you're thinking 'my people live in Google Docs, not text editors' — same pattern, your stack: a shared Drive folder is the kernel, Suggesting mode is the pull request, version history is where the journal starts, and Docs exports markdown natively so the content stays yours. Be precise about what that buys you: **Docs-native is the authoring on-ramp, not the governed end-state.** Suggesting mode buys the habit; you graduate to sync-to-markdown precisely to get the integrity model — review gates, owners, signed history — and the patrol, which runs on files. Markdown is the wire format, not the user interface."*
 
 (Pre-empted objections buy more credibility than answered ones — this one lands at exactly the moment the live-edit beat provokes it.)
 
@@ -76,7 +76,7 @@ The live edit in Beat 6 just created real librarian-work: the new concept is on 
 kernel-keeper .        # private CLI for now — 8 deterministic checks
 ```
 
-The digest's new items are exactly what the room watched come into existence: **HIGH — link to `/glossary/affordability.md` resolves to nothing**, plus `rent-recognition.md` unindexed and unowned. Point at them. **Say it:** *"Ten seconds ago a non-engineer taught every agent on the team. The patrol just caught everything that edit owed the register — the map, the owner, and a promise to a concept that doesn't exist yet. Affirm or amend, grouped by owner. It reports and proposes, it never edits — the clerk is automated, the judge is still a human. And its first runs found three real gaps in this exact bundle the week I built it; the fixes are public commits. That's the answer to 'every wiki dies': this one is patrolled — rot surfaces in seconds, not in a wrong answer months later."*
+The digest's new items are exactly what the room watched come into existence: **HIGH — link to `/glossary/affordability.md` resolves to nothing**, plus `rent-recognition.md` unindexed and unowned. Point at them. **Say it:** *"Ten seconds ago a non-engineer taught every agent on the team. The patrol just caught everything that edit owed the register — the map, the owner, and a promise to a concept that doesn't exist yet. Affirm or amend, grouped by owner. It reports and proposes, it never edits — the clerk is automated, the judge is still a human. And notice the baseline: this bundle sits at eleven low-severity findings **by design** — zero is a vanity number that usually means someone gamed the linter or stopped writing; the target is HIGH-at-zero with everything else visible and owned. Its first runs found three real gaps in this exact bundle; the fixes are public commits. The tool doesn't buy you follow-through — if your team won't act on the digest, that's the finding — but rot now surfaces in seconds, not in a wrong answer months later."*
 
 This beat closes the arc: grounded → governed → scoped → portable → editable → **patrolled** — and it demonstrates the *loop* (edit → rot → detection → owner), not just a tool. It pre-empts the maintenance-decay objection before it's asked.
 
@@ -84,8 +84,8 @@ This beat closes the arc: grounded → governed → scoped → portable → edit
 - "Why is our categorisation accuracy lower than we'd like, and where?" → agent reads the metric + `categorisation_eval.csv` → utilities (84%) and transfers (79%, confused with income).
 - "Reauth completion dropped — is that real?" → agent reads `reauth_events.csv` → it's a **channel-mix shift** (email-only jumped in W27), not a true regression → [reauth runbook](../bundle/runbooks/reauth-dropoff-spike.md).
 - **"Anything *else* in connections worth worrying about?"** (the discrimination test) → agent finds Northern Rockford's 21 June dip (0.68), matches it to the **planned third-Sunday maintenance window** in [known quirks](../bundle/runbooks/known-aspsp-quirks.md), self-recovered → **"expected, don't page."** Detection is easy; a grounded agent *discriminates*.
-- **"Did Northwind ever screen-scrape?"** (the supersession test — stage 5 made visible) → agent finds [`glossary/screen-scraping.md`](../bundle/glossary/screen-scraping.md): `status: superseded → superseded-by: open-finance` → *"historically the sector did; Northwind never has — API-only under Open Banking."* Definitions aren't deleted, they're **superseded** — the agent answers from governed history instead of guessing.
-- **"What do we actually own here — what leaves with us?"** → [`manifest.md`](../bundle/manifest.md), the export contract: contents, format guarantee, "the folder is the asset." Ownership stated as a file, because ownership should be.
+- **"Did Northwind ever screen-scrape?"** (the supersession test — stage 5 made visible) → agent finds [`glossary/screen-scraping.md`](../bundle/glossary/screen-scraping.md): `status: superseded → superseded-by: open-finance` → *"historically the sector did; Northwind never has — API-only under Open Banking."* Definitions aren't deleted, they're **superseded** — the agent answers from governed history instead of guessing. (Frame honestly: this shows the *shape* of change governance; detecting UN-flagged obsolescence is the hard unbuilt part — the v0.2 supersession-integrity seam. Show the seam, don't claim it closed.)
+- **"What do we actually own here — what leaves with us?"** → [`manifest.md`](../bundle/manifest.md), the export contract: contents, format guarantee, "the folder is the asset." (Honest framing: the manifest isn't the ownership — git and your export rights are; it's the *statement* of what leaves, so that conversation happens before signature, not at renewal. The anti-lock-in habit, not a legal instrument.)
 - **"A client says payments keep failing — what's really happening?"** (multi-hop, commercial) → `payment_journeys.csv` shows SCA abandonment concentrated at **Haldane** (~79% vs ~90%) → quirks note: flaky mobile redirect, raised with their team, in-app fallback → connections to Haldane are *fine*; it's the SCA hand-off, one bank, known and owned.
 
 ## The one-liner to land it
