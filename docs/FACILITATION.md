@@ -16,7 +16,7 @@ timestamp: 2026-07-03
 | 0–3 | **Act 1 · The problem** | Talk | The amnesiac. "AI is still the DOS era — everyone hand-loads the printer drivers." |
 | 3–9 | **Act 2 · What's out there** | Talk | Landscape (OKF), whitespace (layers exist, uncomposed), the 2026 packaging pattern. Vendors sell drivers; the kernel can't be bought — it has to be authored. |
 | 9–16 | **Act 3 · The proposal** | Whiteboard/slides | Four layers (anatomy) → boot sequence (order) → kernel & drivers (the thesis): own the kernel, rent the drivers, attach in boot order. |
-| 16–18 | **Act 4 · Today's focus** | Slide | The one-box bounding: "of that whole map, this session is the lit box — so let me build one in front of you." |
+| 16–18 | **Act 4 · Today's focus** | Slide | One-box bounding, then the five-step "how it works" summary — which doubles as the full fallback if the live demo can't run. |
 | 18–28 | **Act 4 · The demo** | Demo | [DEMO.md](DEMO.md) Beats 1–2 + canary tight; narrate the seams; baseline + break-then-catch patrol; command centre payoff. |
 | 28–35 | **Act 5 · What this means for you** | Slides, fast | Staircase (where your people are) → option space (which failure you have) → the traps → MCP trichotomy → sector wedges → two registers (skills get the same governance — see `bundle/processes/skill-promotion.md`) → dogfood receipts (the presenter's own estate, patrolled) → why it matters. ~1 min each. |
 | 35–42 | **Hands-on** | Participation | "Your turn" slide up: fork race → canary → S8. Overruns eat this block, never the argument. |
