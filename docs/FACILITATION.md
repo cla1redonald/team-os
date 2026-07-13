@@ -18,7 +18,7 @@ timestamp: 2026-07-03
 | 9–16 | **Act 3 · The proposal** | Whiteboard/slides | Four layers (anatomy) → boot sequence (order) → kernel & drivers (the thesis): own the kernel, rent the drivers, attach in boot order. |
 | 16–18 | **Act 4 · Today's focus** | Slide | The one-box bounding: "of that whole map, this session is the lit box — so let me build one in front of you." |
 | 18–28 | **Act 4 · The demo** | Demo | [DEMO.md](DEMO.md) Beats 1–2 + canary tight; narrate the seams; baseline + break-then-catch patrol; command centre payoff. |
-| 28–35 | **Act 5 · What this means for you** | Slides, fast | Staircase (where your people are) → option space (which failure you have) → the traps → MCP trichotomy → sector wedges → two registers (skills get the same governance — see `bundle/processes/skill-promotion.md`) → why it matters. ~1 min each. |
+| 28–35 | **Act 5 · What this means for you** | Slides, fast | Staircase (where your people are) → option space (which failure you have) → the traps → MCP trichotomy → sector wedges → two registers (skills get the same governance — see `bundle/processes/skill-promotion.md`) → dogfood receipts (the presenter's own estate, patrolled) → why it matters. ~1 min each. |
 | 35–42 | **Hands-on** | Participation | "Your turn" slide up: fork race → canary → S8. Overruns eat this block, never the argument. |
 | 42–45 | Close | Talk | The one-liner — said to a room already doing it. |
 
