@@ -24,6 +24,7 @@ timestamp: 2026-07-03
 ## Processes — how we work
 - [Enterprise client onboarding](/processes/enterprise-client-onboarding.md)
 - [Consent lifecycle](/processes/consent-lifecycle.md)
+- [Skill promotion — governing the procedure register](/processes/skill-promotion.md)
 
 ## Runbooks — when things break
 - [Bank connection outage](/runbooks/bank-connection-outage.md)
