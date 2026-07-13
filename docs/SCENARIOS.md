@@ -92,6 +92,10 @@ Then ask: *"Can Northwind help a lender assess a renter with a thin credit file?
 
 **Participation variant — "relay":** ask an audience member to *dictate* a concept about their own domain; you type it live; the agent uses it 20 seconds later.
 
+**S7b — the second register.** *"How does a skill become team-canonical at Northwind?"*
+- **Good answer:** cites [skill promotion](/processes/skill-promotion.md) — skills live in a shared repo with an owner each; draft → proposed → reviewed → team-canonical → superseded; agents propose, owners promote.
+- **Teaching point:** the bundle governs **procedures the same way it governs truths**. A stale concept makes an agent *answer* wrong; a stale skill makes it *act* wrong — so the register pattern applies one level up.
+
 ---
 
 ## Tier 6 — Turn it on your own team (the takeaway) · "start Monday"
