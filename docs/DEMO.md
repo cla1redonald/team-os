@@ -19,7 +19,11 @@ The arc: **ungrounded → the kernel boots → a driver attaches (numbers) → s
 - The scripted question on a slide so the room can follow.
 
 ## Beat 1 — Before (the amnesiac) · 2 min
-Ask **a blank agent** — no access to the bundle — same harness, pointed at an **empty folder**, so the only variable is the bundle (comparing chat-without vs agent-with is an unfair A/B and a sharp room will call it):
+Ask **a blank agent** — no access to the bundle — same harness, pointed at an **empty folder**, so the only variable is the bundle (comparing chat-without vs agent-with is an unfair A/B and a sharp room will call it).
+
+**The second contamination class (field-tested): the presenter's own account.** A "blank" agent isn't blank if your harness carries account-level connectors, a personal instructions file, or an auto mode — it will run your startup rituals, search your real systems for the fictional company, and even discover the demo folder if it's a findable sibling. Three guards: put the empty folder in a **different directory tree** from the demo bundle; run both demo agents with **auto/self-driving modes off**; and scope the prompt — *"Without using any tools, connectors or searches — answer from your own knowledge only: …"*. The A/B stays fair because the grounded agent gets the mirrored constraint (work from what's in front of you); the folder remains the only variable. This also keeps your real client systems off the projector.
+
+The question:
 > "At Northwind Money, connection success rate dropped this week. What's going on and what should we do?"
 
 Expect a *competent* generic answer — a decent triage framework that ends by asking **you** for the data. Don't undersell it; name it precisely: *fluent, sensible methodology, zero knowledge of us — it hands the work back to you. Ten people asking get ten different frameworks.*
