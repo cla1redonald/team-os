@@ -39,7 +39,6 @@ docs/
   FACILITATION.md      # how to run a 45-min session on this material
   LEARN.md             # learning path to present & defend it cold
   research/            # 4 sourced research briefs (formats, non-eng, vendors, beads)
-  _source-substacks/   # the author's published Substack articles (voice/reference)
 ```
 
 ## Try the demo in 60 seconds
@@ -63,6 +62,7 @@ Without the bundle, you get a generic answer. With it, a grounded agent will spo
 
 - **The argument in full** — [`docs/EXPERT-BRIEFING.md`](docs/EXPERT-BRIEFING.md): the four-layer mental model (instructions / knowledge / memory / tools), where OKF fits, build-vs-buy, and the Q&A defence.
 - **The evidence** — [`docs/research/`](docs/research/): sourced briefs on knowledge formats, non-engineering practitioners building this pattern, the vendor landscape, and Beads (the memory layer).
+- **Related reading**: Hannah Stulberg's [In the Weeds](https://hannahstulberg.substack.com/) newsletter covers the same shared-context pattern from a non-engineering angle. Her writing is her own (CC BY-NC 4.0) and is linked, not reproduced here.
 - **Running it as a session** — [`docs/FACILITATION.md`](docs/FACILITATION.md) and [`docs/SCENARIOS.md`](docs/SCENARIOS.md).
 
 *Northwind Money is synthetic; all numbers are illustrative.*
